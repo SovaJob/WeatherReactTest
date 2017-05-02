@@ -21,9 +21,6 @@ import {Actions} from 'react-native-router-flux'
 var {GooglePlacesAutocomplete} = require('react-native-google-places-autocomplete');
 import { posChanged, } from '../actions/main_actions'
 
-const homePlace = {description: 'Home', geometry: { location: { lat: 48.8152937, lng: 2.4597668 } }};
-const workPlace = {description: 'Work', geometry: { location: { lat: 48.8496818, lng: 2.2940881 } }};
-
 class Second extends Component {
     constructor(props) {
         super(props)
@@ -40,7 +37,7 @@ class Second extends Component {
 
     componentWillReceiveProps(nextProps)
     {
-      if(nextProps.weatherObj) Actions.pop(); 
+      if(nextProps.weatherObj) Actions.pop();
     }
 
 
@@ -102,8 +99,7 @@ class Second extends Component {
 
                     filterReverseGeocodingByTypes={['locality', 'administrative_area_level_3']} // filter the reverse geocoding results by types - ['locality', 'administrative_area_level_3'] if you want to display only cities
 
-                    predefinedPlaces={[homePlace, workPlace]}
-
+                    
                     debounce={200} // debounce the requests in ms. Set to 0 to remove debounce. By default 0ms.
                     //renderLeftButton={() => <Image source={require('path/custom/left-icon')} />}
                     //renderRightButton={() => <Text>Custom text after the inputg</Text>}
